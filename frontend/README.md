@@ -1,59 +1,43 @@
-# Frontend
+open file frontend
+cd frontend,
+Install dependencies: npm install,
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
+Start the app: npm start
 
-## Development server
+Technologies
+Angular
+TypeScript
 
-To start a local development server, run:
+Technologies
+Angular 19+
+Reactive Forms
+Bootstrap 5
+HttpClient
+TypeScript
+Type-safe codebase
+RxJS
 
-```bash
-ng serve
-```
+Key Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Registration
+   Validates:
+   Name (minimum 2 characters)
+   Email (format validation)
+   Password (minimum 8 characters, letters + numbers)
+2. User Profile
+   Fetches user data via GET /api/users/me (requires JWT token).
+   Updates profile via PUT /api/users/me (supports name, surname, email, phone).
+   Deletes account via DELETE /api/users/me (confirmation prompt).
 
-## Code scaffolding
+Configuration
+API URL:
+Set in src/environments/environment.ts for development.
+Update src/environments/environment.prod.ts for production.
+JWT Token Storage:
+Token is stored in localStorage after login.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Security
+JWT Authentication:
+All /profile routes require a valid token in the Authorization header.
+Client-Side Validation:
+Forms use Angular Reactive Forms validators.
